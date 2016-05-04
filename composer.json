@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php": "^7.0",
+        "zendframework/zend-version": "~2.5"
+    }
+}

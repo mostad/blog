@@ -1,0 +1,19 @@
+application:
+  image: mostad/blog
+mysql:
+  image: mostad/mysql
+  ports:
+    - "3306:3306"
+nginx:
+  image: mostad/nginx
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes_from:
+    - application
+php:
+  image: mostad/php-fpm
+  ports:
+    - "9000"
+  volumes_from:
+    - application

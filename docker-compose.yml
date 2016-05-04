@@ -1,0 +1,32 @@
+version: '2'
+services:
+  application:
+    build: ./
+    volumes:
+      - ./:/application
+  mysql:
+    image: mostad/mysql
+    ports:
+      - "3306:3306"
+  nginx:
+    image: mostad/nginx
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: blog
+      MYSQL_USER: mostad
+      MYSQL_PASSWORD: 123
+    depends_on:
+      - application
+      - mysql
+      - php
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes_from:
+      - application
+  php:
+    image: mostad/php-fpm
+    ports:
+      - "9000"
+    volumes_from:
+      - application
