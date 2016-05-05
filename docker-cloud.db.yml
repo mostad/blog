@@ -5,5 +5,3 @@ mysql:
     - MYSQL_PASSWORD=123
     - MYSQL_ROOT_PASSWORD=123
     - MYSQL_USER=mostad
-  ports:
-    - '3306'
