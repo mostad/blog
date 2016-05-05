@@ -8,6 +8,8 @@ RUN apt-get update && \
 RUN docker-php-ext-install pdo pdo_mysql zip
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+USER www-data
+
 # Install composer dependencies
 COPY composer.json /tmp/composer.json
 COPY composer.lock /tmp/composer.lock
