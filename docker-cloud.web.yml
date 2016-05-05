@@ -1,0 +1,17 @@
+application:
+  image: 'mostad/blog:latest'
+nginx:
+  image: 'mostad/nginx:latest'
+  ports:
+    - '80'
+    - '443'
+  volumes_from:
+    - application
+php:
+  image: 'mostad/php-fpm:latest'
+  links:
+    - 'mysql'
+  ports:
+    - '9000'
+  volumes_from:
+    - application

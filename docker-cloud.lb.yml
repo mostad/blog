@@ -1,0 +1,8 @@
+haproxy:
+  image: 'dockercloud/haproxy:1.4'
+  links:
+    - 'nginx'
+  ports:
+    - '80:80'
+  roles:
+    - global

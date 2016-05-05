@@ -1,0 +1,9 @@
+mysql:
+  image: 'mostad/mysql:latest'
+  environment:
+    - MYSQL_DATABASE=blog
+    - MYSQL_PASSWORD=123
+    - MYSQL_ROOT_PASSWORD=123
+    - MYSQL_USER=mostad
+  ports:
+    - '3306'
