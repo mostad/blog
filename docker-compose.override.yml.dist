@@ -1,0 +1,11 @@
+version: '2'
+services:
+  application:
+    volumes:
+      - ./:/application
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: blog
+      MYSQL_USER: mostad
+      MYSQL_PASSWORD: 123

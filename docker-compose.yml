@@ -2,8 +2,6 @@ version: '2'
 services:
   application:
     build: ./
-    volumes:
-      - ./:/application
   mysql:
     image: mostad/mysql
     ports:
