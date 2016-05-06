@@ -4,8 +4,8 @@ services:
     volumes:
       - ./:/var/www/html
   mysql:
-    environment:
-      MYSQL_ROOT_PASSWORD: 123
-      MYSQL_DATABASE: blog
-      MYSQL_USER: mostad
-      MYSQL_PASSWORD: 123
+      environment:
+        - MYSQL_DATABASE=blog
+        - MYSQL_PASSWORD=123
+        - MYSQL_ROOT_PASSWORD=123
+        - MYSQL_USER=mostad
