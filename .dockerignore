@@ -1,3 +1,4 @@
+data/cache/*
 vendor/
 docker-cloud.db.yml
 docker-cloud.lb.yml
