@@ -7,15 +7,15 @@ services:
   mysql:
     image: mostad/mysql
     ports:
-      - "3306:3306"
+      - '3306:3306'
   nginx:
     image: mostad/nginx
     depends_on:
       - application
     links:
-      - "application:php-fpm"
+      - 'application:php-fpm'
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     volumes_from:
       - application
