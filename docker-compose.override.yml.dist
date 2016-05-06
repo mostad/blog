@@ -2,7 +2,7 @@ version: '2'
 services:
   application:
     volumes:
-      - ./:/application
+      - ./:/var/www/html
   mysql:
     environment:
       MYSQL_ROOT_PASSWORD: 123
