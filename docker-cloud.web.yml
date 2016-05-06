@@ -1,12 +1,10 @@
 application:
   image: 'mostad/blog:latest'
-nginx:
-  image: 'mostad/nginx:latest'
-  volumes_from:
-    - application
-php:
-  image: 'mostad/php-fpm:latest'
   links:
     - 'mysql'
+nginx:
+  image: 'mostad/nginx:latest'
+  links:
+    - 'application:php-fpm'
   volumes_from:
     - application

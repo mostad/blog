@@ -2,6 +2,8 @@ version: '2'
 services:
   application:
     build: ./
+    depends_on:
+      - mysql
   mysql:
     image: mostad/mysql
     ports:
@@ -10,16 +12,10 @@ services:
     image: mostad/nginx
     depends_on:
       - application
-      - mysql
-      - php
+    links:
+      - "application:php-fpm"
     ports:
       - "80:80"
       - "443:443"
-    volumes_from:
-      - application
-  php:
-    image: mostad/php-fpm
-    ports:
-      - "9000"
     volumes_from:
       - application
