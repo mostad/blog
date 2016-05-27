@@ -3,6 +3,7 @@ services:
   application:
     volumes:
       - ./:/var/www/html
+      - ./conf.d/nginx.conf:/etc/nginx/conf.d/default.conf
   mysql:
       environment:
         - MYSQL_DATABASE=blog

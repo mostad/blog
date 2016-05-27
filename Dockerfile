@@ -2,6 +2,7 @@ FROM php:7.0-fpm
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+# Intall PHP dependencies
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y zlib1g-dev git && \
     rm -r /var/lib/apt/lists/*
@@ -16,6 +17,10 @@ RUN cd /tmp && \
 RUN mkdir -p /var/www/html && \
     cp -a /tmp/vendor /var/www/html/
 
+# Copy nginx config
+COPY ./conf.d/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy and chmod application
 COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 

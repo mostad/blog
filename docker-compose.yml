@@ -9,7 +9,7 @@ services:
     ports:
       - '3306:3306'
   nginx:
-    image: mostad/nginx
+    image: nginx:1.10
     depends_on:
       - application
     links:
