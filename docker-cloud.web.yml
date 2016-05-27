@@ -3,7 +3,7 @@ application:
   links:
     - 'mysql'
 nginx:
-  image: nginx:1.10
+  image: 'nginx:1.10'
   links:
     - 'application:php-fpm'
   volumes_from:
