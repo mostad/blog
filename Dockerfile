@@ -24,4 +24,5 @@ COPY ./conf.d/nginx.conf /etc/nginx/conf.d/default.conf
 COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
+VOLUME ["/etc/nginx/conf.d"]
 VOLUME ["/var/www/html"]
