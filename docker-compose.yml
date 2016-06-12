@@ -8,6 +8,8 @@ services:
     image: mostad/mysql
     ports:
       - '3306:3306'
+    volumes:
+      - database:/var/lib/mysql
   nginx:
     image: nginx:1.10
     depends_on:
@@ -19,3 +21,6 @@ services:
       - '443:443'
     volumes_from:
       - application
+volumes:
+    database:
+        driver: local
