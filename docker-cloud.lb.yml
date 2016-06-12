@@ -1,7 +1,8 @@
+# Stack name: blog-loadbalancer
 haproxy:
   image: 'dockercloud/haproxy:1.4'
   links:
-    - 'nginx'
+    - 'nginx.blog-application:nginx'
   ports:
     - '80:80'
   roles:

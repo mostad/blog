@@ -1,7 +1,8 @@
+# Stack name: blog-application
 application:
   image: 'mostad/blog:latest'
   links:
-    - 'mysql'
+    - 'mysql.blog-database:mysql'
 nginx:
   image: 'nginx:1.10'
   links:

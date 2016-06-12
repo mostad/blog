@@ -1,3 +1,4 @@
+# Stack name: blog-database
 mysql:
   image: 'mostad/mysql:latest'
   environment:
