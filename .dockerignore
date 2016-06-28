@@ -1,7 +1,3 @@
 vendor/
-docker-cloud.db.yml
-docker-cloud.lb.yml
-docker-cloud.web.yml
-docker-compose.override.yml
-docker-compose.override.yml.dist
-docker-compose.yml
+docker-cloud.*
+docker-compose.*
